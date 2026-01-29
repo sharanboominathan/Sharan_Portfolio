@@ -100,6 +100,7 @@ export default function Contact() {
                                         </svg>
                                     )
                                 },
+                                
                                 {
                                     name: 'LinkedIn', url: 'https://www.linkedin.com/in/sharan-b-956422281', icon: (
                                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
