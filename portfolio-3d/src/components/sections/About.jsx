@@ -64,7 +64,7 @@ export default function About() {
                         className="space-y-6"
                     >
                         {/* Stats Grid */}
-                        <div className="grid grid-cols-2 gap-4 mb-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                             {stats.map((stat, index) => (
                                 <motion.div
                                     key={stat.label}
