@@ -29,7 +29,7 @@ export default function Experience() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2, duration: 0.6 }}
-                            className={`relative mb-12 ${index % 2 === 0 ? 'md:pr-1/2 md:text-right' : 'md:pl-1/2 md:ml-auto'
+                            className={`relative mb-12 ${index % 2 === 0 ? 'md:pr-1/2' : 'md:pl-1/2 md:ml-auto'
                                 }`}
                         >
                             {/* Timeline Dot */}
@@ -41,7 +41,7 @@ export default function Experience() {
                                 className="glass p-6 md:p-8 rounded-xl ml-16 md:ml-0 transform transition-all duration-300 hover:glow"
                             >
                                 <div className="flex items-start justify-between mb-4">
-                                    <div className={index % 2 === 0 ? 'md:text-right' : ''}>
+                                    <div className="">
                                         <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
                                         <p className="text-accent-cyan font-semibold text-lg">{exp.company}</p>
                                     </div>
@@ -52,14 +52,14 @@ export default function Experience() {
                                     )}
                                 </div>
 
-                                <div className={`flex items-center gap-2 text-gray-400 mb-4 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
+                                <div className="flex items-center gap-2 text-gray-400 mb-4">
                                     <span>📅</span>
                                     <span>{exp.period}</span>
                                     <span>•</span>
                                     <span>📍 {exp.location}</span>
                                 </div>
 
-                                <ul className={`space-y-3 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+                                <ul className="space-y-3">
                                     {exp.responsibilities.map((resp, i) => (
                                         <motion.li
                                             key={i}
@@ -67,7 +67,7 @@ export default function Experience() {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: i * 0.1, duration: 0.4 }}
-                                            className="text-gray-300 leading-relaxed flex items-start gap-2"
+                                            className={`text-gray-300 leading-relaxed flex items-start gap-2 ${index % 2 === 0 ? 'md:flex-row' : ''}`}
                                         >
                                             <span className="text-accent-cyan mt-1">▹</span>
                                             <span>{resp}</span>
