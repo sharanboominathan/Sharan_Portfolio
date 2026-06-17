@@ -51,7 +51,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-bg/40 to-dark-bg z-10"></div>
 
             {/* Content */}
-            <div className="relative z-20 container mx-auto px-6 text-center">
+            <div className="relative z-20 container mx-auto px-6 text-center pb-28">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -124,21 +124,6 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
-            >
-                <div className="w-6 h-10 border-2 border-accent-cyan rounded-full flex justify-center">
-                    <motion.div
-                        animate={{ y: [0, 12, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                        className="w-1.5 h-1.5 bg-accent-cyan rounded-full mt-2"
-                    />
-                </div>
-            </motion.div>
         </section>
     );
 }
