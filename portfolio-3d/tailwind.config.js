@@ -8,25 +8,25 @@ export default {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#0ea5e9',
-                    dark: '#0284c7',
-                    light: '#38bdf8',
+                    DEFAULT: '#7c3aed',
+                    dark: '#6d28d9',
+                    light: '#8b5cf6',
                 },
                 secondary: {
-                    DEFAULT: '#8b5cf6',
-                    dark: '#7c3aed',
-                    light: '#a78bfa',
+                    DEFAULT: '#ea580c',
+                    dark: '#c2410c',
+                    light: '#f97316',
                 },
                 accent: {
-                    cyan: '#06b6d4',
-                    blue: '#3b82f6',
-                    purple: '#a855f7',
+                    cyan: '#7c3aed',    // deep violet — primary
+                    blue: '#ea580c',    // deep orange — secondary
+                    purple: '#059669',  // deep emerald — tertiary
                 },
                 dark: {
-                    bg: '#0a0e1a',
-                    secondary: '#111827',
-                    card: '#1a1f35',
-                    border: '#334155',
+                    bg: '#faf9ff',          // near-white with lavender tint
+                    secondary: '#f0ebff',   // soft lavender
+                    card: '#ffffff',        // pure white cards
+                    border: '#e4d9ff',      // light violet border
                 },
             },
             animation: {
@@ -43,8 +43,8 @@ export default {
                     '50%': { transform: 'translateY(-20px)' },
                 },
                 glow: {
-                    '0%': { boxShadow: '0 0 5px #0ea5e9, 0 0 10px #0ea5e9' },
-                    '100%': { boxShadow: '0 0 10px #0ea5e9, 0 0 20px #0ea5e9, 0 0 30px #0ea5e9' },
+                    '0%': { boxShadow: '0 0 5px rgba(124,58,237,0.3), 0 0 10px rgba(124,58,237,0.2)' },
+                    '100%': { boxShadow: '0 0 15px rgba(124,58,237,0.5), 0 0 30px rgba(124,58,237,0.3)' },
                 },
                 slideUp: {
                     '0%': { transform: 'translateY(100px)', opacity: '0' },
@@ -59,8 +59,8 @@ export default {
                     '50%': { backgroundPosition: '100% 50%' },
                 },
                 'border-flow': {
-                    '0%, 100%': { borderColor: 'rgba(6, 182, 212, 0.3)' },
-                    '50%': { borderColor: 'rgba(59, 130, 246, 0.5)' },
+                    '0%, 100%': { borderColor: 'rgba(124, 58, 237, 0.4)' },
+                    '50%': { borderColor: 'rgba(234, 88, 12, 0.5)' },
                 },
             },
             backgroundImage: {

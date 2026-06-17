@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import Scene3D from '../3D/Scene3D';
 
 const roles = [
-    'Cloud/DevOps Engineer',
-    'Full-Stack Developer',
-    'Azure Specialist',
-    'Kubernetes Expert',
-    'Software Developer',
-    'Vibe Coder 🎵',
+    'Cloud & DevOps Engineer',
+    'Azure Cloud Specialist',
+    'Kubernetes Administrator',
+    'AWS & GCP Engineer',
     'CI/CD Automation Engineer',
-    'Infrastructure Developer',
+    'AI Integration Engineer',
+    'Infrastructure Architect',
+    'Vibe Coder 🎵',
 ];
 
 export default function Hero() {
@@ -47,8 +47,8 @@ export default function Hero() {
             {/* 3D Background */}
             <Scene3D />
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-bg/50 to-dark-bg z-10"></div>
+            {/* Light gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-bg/40 to-dark-bg z-10"></div>
 
             {/* Content */}
             <div className="relative z-20 container mx-auto px-6 text-center">
@@ -57,7 +57,7 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <p className="text-accent-cyan text-lg md:text-xl mb-4 font-light">
+                    <p className="text-accent-cyan text-lg md:text-xl mb-4 font-semibold tracking-wide uppercase">
                         Hi, my name is
                     </p>
 
@@ -66,7 +66,7 @@ export default function Hero() {
                     </h1>
 
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-8 h-16 md:h-20">
-                        <span className="text-white">{displayText}</span>
+                        <span className="text-gray-800">{displayText}</span>
                         <span className="animate-pulse text-accent-cyan">|</span>
                     </h2>
 
@@ -74,13 +74,33 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
-                        className="text-gray-300 text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-12 leading-relaxed"
+                        className="text-gray-600 text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-6 leading-relaxed"
                     >
-                        Cloud/DevOps Engineer & Full-Stack Developer specializing in Azure and AWS cloud platforms,
-                        Kubernetes orchestration, CI/CD automation, and scalable web application development.
-                        A passionate "vibe coder" who builds robust, automated solutions and delivers production-ready
-                        applications that drive efficiency and reliability.
+                        Cloud & DevOps Engineer with 2+ years architecting production infrastructure across
+                        Azure, AWS, and GCP. Designed multi-tenant Kubernetes platforms hosting 25+ workloads
+                        at 99%+ uptime — specializing in Terraform, CI/CD automation, cloud security, and
+                        AI-powered solutions.
                     </motion.p>
+
+                    {/* Quick stats bar */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.7, duration: 0.8 }}
+                        className="flex flex-wrap justify-center gap-6 mb-10 text-sm"
+                    >
+                        {[
+                            { icon: '☁️', label: 'Azure · AWS · GCP' },
+                            { icon: '🚀', label: '25+ Production Workloads' },
+                            { icon: '⚡', label: '99%+ Uptime' },
+                            { icon: '🔒', label: 'Zero-Downtime Deployments' },
+                        ].map((item) => (
+                            <span key={item.label} className="flex items-center gap-1.5 glass px-3 py-1.5 rounded-full text-gray-600">
+                                <span>{item.icon}</span>
+                                <span className="font-medium">{item.label}</span>
+                            </span>
+                        ))}
+                    </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -90,13 +110,13 @@ export default function Hero() {
                     >
                         <a
                             href="#contact"
-                            className="px-8 py-4 bg-accent-cyan text-dark-bg font-semibold rounded-lg hover:bg-accent-blue transition-all duration-300 transform hover:scale-105 glow-hover"
+                            className="px-8 py-4 bg-accent-cyan text-white font-semibold rounded-lg hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 glow-hover shadow-lg"
                         >
                             Get In Touch
                         </a>
                         <a
                             href="#projects"
-                            className="px-8 py-4 border-2 border-accent-cyan text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan hover:text-dark-bg transition-all duration-300 transform hover:scale-105"
+                            className="px-8 py-4 border-2 border-accent-cyan text-accent-cyan font-semibold rounded-lg hover:bg-accent-cyan hover:text-white transition-all duration-300 transform hover:scale-105"
                         >
                             View My Work
                         </a>

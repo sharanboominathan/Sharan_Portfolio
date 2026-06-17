@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { projectsData, categories } from '../../data/projects';
 
+// Fixed tech badge styles safe for Tailwind's JIT (no dynamic class names)
+const techBadgeStyle = {
+    cyan: 'bg-violet-100 text-violet-700 border border-violet-200',
+    blue: 'bg-orange-100 text-orange-700 border border-orange-200',
+    purple: 'bg-emerald-100 text-emerald-700 border border-emerald-200',
+};
+
 export default function Projects() {
     const [activeCategory, setActiveCategory] = useState('all');
 
@@ -22,13 +29,13 @@ export default function Projects() {
                     <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         <span className="gradient-text">Production Portfolio</span>
                     </h2>
-                    <p className="text-gray-400 text-lg mb-4">
-                        25+ cloud-native applications, SaaS platforms, and AI integrations deployed on Azure
+                    <p className="text-gray-500 text-lg mb-4">
+                        30+ cloud-native applications, SaaS platforms, and AI integrations
                     </p>
                     <div className="glass p-4 rounded-lg max-w-4xl mx-auto">
-                        <p className="text-gray-300">
-                            <strong className="gradient-text">Designed, deployed, and scaled 25+ cloud-native Django applications and SaaS platforms</strong>{' '}
-                            using Azure, Docker, Kubernetes (AKS), CI/CD pipelines, SSL automation, and AI integrations.
+                        <p className="text-gray-600">
+                            <strong className="gradient-text">Designed, deployed, and scaled 30+ cloud-native Django applications and SaaS platforms</strong>{' '}
+                            using Azure, AWS, GCP, Docker, Kubernetes, CI/CD pipelines, SSL automation, and AI integrations.
                         </p>
                     </div>
                 </motion.div>
@@ -44,12 +51,13 @@ export default function Projects() {
                         <button
                             key={cat.id}
                             onClick={() => setActiveCategory(cat.id)}
-                            className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${activeCategory === cat.id
-                                    ? 'bg-accent-cyan text-dark-bg glow'
-                                    : 'glass text-gray-300 hover:text-white'
-                                }`}
+                            className={`px-5 py-2.5 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 text-sm ${
+                                activeCategory === cat.id
+                                    ? 'bg-accent-cyan text-white shadow-lg glow'
+                                    : 'glass text-gray-600 hover:text-accent-cyan'
+                            }`}
                         >
-                            <span className="mr-2">{cat.icon}</span>
+                            <span className="mr-1.5">{cat.icon}</span>
                             {cat.name}
                         </button>
                     ))}
@@ -63,20 +71,20 @@ export default function Projects() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                            whileHover={{ y: -10, scale: 1.02 }}
+                            transition={{ delay: index * 0.07, duration: 0.5 }}
+                            whileHover={{ y: -8, scale: 1.02 }}
                             className="glass p-6 rounded-xl transform transition-all duration-300 hover:glow card-3d"
                         >
-                            <div className="text-5xl mb-4">{project.icon}</div>
-                            <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                            <div className="text-4xl mb-3">{project.icon}</div>
+                            <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
+                            <p className="text-gray-500 text-sm mb-4 leading-relaxed">
                                 {project.description}
                             </p>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-1.5">
                                 {project.tech.map((tech, i) => (
                                     <span
                                         key={i}
-                                        className={`px-3 py-1 text-xs rounded-full bg-${project.color}-500/20 text-${project.color}-400 border border-${project.color}-500/30`}
+                                        className={`px-2.5 py-1 text-xs rounded-full font-medium ${techBadgeStyle[project.color] ?? techBadgeStyle.cyan}`}
                                     >
                                         {tech}
                                     </span>

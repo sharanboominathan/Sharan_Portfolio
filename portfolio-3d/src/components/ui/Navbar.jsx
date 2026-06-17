@@ -28,7 +28,7 @@ export default function Navbar() {
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled || mobileMenuOpen ? 'glass py-4' : 'bg-transparent py-6'
+            className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled || mobileMenuOpen ? 'glass py-4 shadow-sm' : 'bg-transparent py-6'
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
@@ -42,7 +42,7 @@ export default function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-gray-300 hover:text-accent-cyan transition-colors duration-300 font-medium"
+                            className="text-gray-600 hover:text-accent-cyan transition-colors duration-300 font-medium"
                         >
                             {link.name}
                         </a>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white z-50 relative focus:outline-none"
+                    className="md:hidden text-gray-700 z-50 relative focus:outline-none"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     <div className="w-6 h-6 flex flex-col justify-around">
@@ -63,13 +63,13 @@ export default function Navbar() {
 
                 {/* Mobile Menu Overlay */}
                 {createPortal(
-                    <div className={`fixed inset-0 z-[50] bg-dark-bg/95 backdrop-blur-xl transition-all duration-300 md:hidden flex flex-col items-center justify-center gap-8 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    <div className={`fixed inset-0 z-[50] bg-dark-bg/97 backdrop-blur-xl transition-all duration-300 md:hidden flex flex-col items-center justify-center gap-8 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
                         }`}>
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-2xl text-gray-300 hover:text-accent-cyan transition-colors duration-300 font-medium"
+                                className="text-2xl text-gray-700 hover:text-accent-cyan transition-colors duration-300 font-medium"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {link.name}
